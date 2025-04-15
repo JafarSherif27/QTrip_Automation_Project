@@ -30,6 +30,7 @@ dependencies {
     
 }
 
+
 // Additional config for Crio workspace
 buildDir = '/tmp/external_build'
 
@@ -44,6 +45,8 @@ test.dependsOn startScript
 test {
     useTestNG() {
         useDefaultListeners = true // generates the test report
+        suites 'src/test/java/qtriptest/testng.xml'
+       
     }
 
     afterSuite { desc, result ->

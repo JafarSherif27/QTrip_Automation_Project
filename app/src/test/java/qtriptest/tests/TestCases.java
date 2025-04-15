@@ -22,6 +22,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@SuppressWarnings("unused")
 // Unit test to check correctness of actions
 public class TestCases {
     RemoteWebDriver driver;
