@@ -16,17 +16,30 @@ application {
 }
 
 dependencies {
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-1'
+    // implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-1'
+
+
+    // Use TestNG framework, also requires calling test.useTestNG() below
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0'
     testImplementation group: 'org.testng', name: 'testng', version: '7.6.0'
 
-
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    // NOTE: Added to remove the "ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console..." error shown
+   
     implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
 
     // https://mvnrepository.com/artifact/org.apache.poi/poi
     implementation group: 'org.apache.poi', name: 'poi', version: '5.2.2'
 
     // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    //poi dependency
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.2'
+    //Restassured dependency 
+    testImplementation 'io.rest-assured:rest-assured:5.2.0'
+    //json schema validator dependency 
+    testImplementation 'io.rest-assured:json-schema-validator:4.3.3'
+    //json object dependency 
+    implementation 'org.json:json:20171018'
     
 }
 
@@ -71,3 +84,11 @@ test {
     test.outputs.upToDateWhen {false}
 
 }
+
+task startScript(type:Exec) {
+    commandLine '../selenium-run.sh'
+}
+
+run.dependsOn startScript
+
+test.dependsOn startScript
