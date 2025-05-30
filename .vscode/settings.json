@@ -1,4 +1,13 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        // "app/src/test/java/qtriptest/APITests",
+        "app/src/test/java"
+    ]
 }
+// {
+//   "java.project.sourcePaths": [
+//     "src/test/java"
+//   ]
+// }

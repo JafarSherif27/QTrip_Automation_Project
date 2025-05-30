@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Tests for QTrip Regression">
-    <test name = "Test Execution using testNG" verbose="10">
-        <!-- <packages>
-            <package name="qtriptest.tests"></package>
-        </packages> -->
+    <test name = "QTrip Test Execution using testNG" verbose="10">
         <classes>
             <class name = "qtriptest.tests.testCase_01"/>
             <class name = "qtriptest.tests.testCase_02"/>
             <class name = "qtriptest.tests.testCase_03"/> 
             <class name = "qtriptest.tests.testCase_04"/>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->  
+    </test> <!-- UI Test -->
+    <test name = "QTrip API Test Execution using testNG" verbose = "10">
+        <classes>
+            <class name = "qtriptest.APITests.testCase_API_01"/>
+            <class name = "qtriptest.APITests.testCase_API_02"/>
+            <class name = "qtriptest.APITests.testCase_API_03"/> 
+            <class name = "qtriptest.APITests.testCase_API_04"/>
+        </classes>
+    </test> <!-- API Test -->
+</suite> 
